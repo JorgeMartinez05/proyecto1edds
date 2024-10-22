@@ -350,5 +350,25 @@ public class Lista {
         }
         return "Lista vacia";
     }
+     
+    public void destruir(){
+        this.pFirst = null;
+        this.size = 0;
+    }
+    
+    public Vertice buscarVertice(String nombre){
+        if(!this.isEmpty()){
+            for (int i = 0; i < this.size; i++) {
+                Vertice verticeACtual = (Vertice) this.getValor(i);
+                if(verticeACtual.getEstacion().getNombre().equalsIgnoreCase(nombre)){
+                    return verticeACtual;
+                }
+            }
+            
+            return null;
+        }
+        
+        return null;
+    }
     
 }
