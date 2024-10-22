@@ -74,6 +74,29 @@ public class Grafo {
         }
     }
 
+    public void InsertarVertice(Vertice vertice) {
+        String nombre = vertice.getEstacion().getNombre();
+        if (buscarEstacion(nombre) == null) {
+            vertice.setNumVertice(this.estaciones.getSize());
+
+        } else {
+            JOptionPane.showMessageDialog(null, "El vertice ya se encuentra insertado");
+
+        }
+    }
+
+    public boolean haySucursales() {
+        if (!this.estaciones.isEmpty()) {
+            for (int i = 0; i < estaciones.getSize(); i++) {
+                Vertice verticeActual = (Vertice) estaciones.getValor(i);
+                if (verticeActual.getEstacion().isSucursal()) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
+    }
 
     @Override
     public String toString() {
@@ -97,4 +120,11 @@ public class Grafo {
         }
     }
 
+    public void mostrar() {
+        JOptionPane.showMessageDialog(null, this.estaciones.toString());
+    }
+
+    public void destruir() {
+        this.estaciones.destruir();
+    }
 }
