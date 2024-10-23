@@ -9,5 +9,22 @@ package Funcionalidades;
  * @author eabdf
  */
 public class Validacion {
-    
+
+    private boolean esNumeroValido(String numero) {
+        try {
+            Integer.valueOf(numero);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public int ValidarNumero(String numero) {
+        if (esNumeroValido(numero)) {
+            return Integer.parseInt(numero);
+        } else {
+            return -1;
+        }
+    }
+
 }
