@@ -34,7 +34,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         EstablecerValorT = new javax.swing.JButton();
         mostrarRed = new javax.swing.JButton();
         CargarRed = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        SalirMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,13 +73,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(CargarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 120, -1));
 
-        jButton7.setText("X");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        SalirMenu.setText("X");
+        SalirMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                SalirMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 60, 50));
+        jPanel1.add(SalirMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 60, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 580, 290));
 
@@ -94,9 +94,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CargarRedActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void SalirMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMenuActionPerformed
        System.exit(0);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_SalirMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,9 +138,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton CargarRed;
     private javax.swing.JButton Coberturas;
     private javax.swing.JButton EstablecerValorT;
+    private javax.swing.JButton SalirMenu;
     private javax.swing.JButton colocarSucursal;
     private javax.swing.JButton eliminarSucursal;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton mostrarRed;
