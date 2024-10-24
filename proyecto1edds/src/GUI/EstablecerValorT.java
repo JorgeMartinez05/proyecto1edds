@@ -4,6 +4,10 @@
  */
 package GUI;
 
+import Funcionalidades.Validacion;
+import static GUI.CargaDeRed.t;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author eabdf
@@ -15,6 +19,9 @@ public class EstablecerValorT extends javax.swing.JFrame {
      */
     public EstablecerValorT() {
         initComponents();
+        this.setVisible(true);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,21 +33,83 @@ public class EstablecerValorT extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        inputNuevoValorT = new javax.swing.JTextField();
+        cambiar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        valorActual = new javax.swing.JLabel();
+        IrMenu = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel1.setText("ESTABLECER VALOR DE T ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel2.setText("Ingresa el valor de T:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
+        jPanel1.add(inputNuevoValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 240, 50));
+
+        cambiar.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        cambiar.setText("cambiar");
+        cambiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambiarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel3.setText("Valor actual de T:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
+        valorActual.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        valorActual.setForeground(new java.awt.Color(0, 0, 255));
+        valorActual.setText("T");
+        jPanel1.add(valorActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 50, -1));
+
+        IrMenu.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        IrMenu.setText("Ir a Menu");
+        IrMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IrMenuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(IrMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarActionPerformed
+        if (!inputNuevoValorT.getText().isEmpty()) {
+            Validacion validacion = new Validacion();
+            String nuevaTStr = inputNuevoValorT.getText();
+            if (validacion.ValidarNumero(nuevaTStr) != -1) {
+                int valorInicialT = validacion.ValidarNumero(nuevaTStr);
+                t = valorInicialT;
+                JOptionPane.showMessageDialog(null, "El valor de T se actualizo correctamente");
+                inputNuevoValorT.setText("");
+                valorActual.setText(String.valueOf(t));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Debe ser un numero entero ! ");
+            }
+        }
+    }//GEN-LAST:event_cambiarActionPerformed
+
+    private void IrMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IrMenuActionPerformed
+       MenuPrincipal menu = new MenuPrincipal();
+       this.dispose();
+    }//GEN-LAST:event_IrMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +147,13 @@ public class EstablecerValorT extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton IrMenu;
+    private javax.swing.JButton cambiar;
+    private javax.swing.JTextField inputNuevoValorT;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel valorActual;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import static GUI.CargaDeRed.grafoEDD;
+
 /**
  *
  * @author jorge
@@ -15,6 +17,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        this.setVisible(true);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -57,6 +62,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         eliminarSucursal.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         eliminarSucursal.setText("Eliminar Sucursal");
+        eliminarSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarSucursalActionPerformed(evt);
+            }
+        });
         jPanel1.add(eliminarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 100, 180, -1));
 
         Coberturas.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -99,11 +109,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void colocarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colocarSucursalActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_colocarSucursalActionPerformed
 
     private void CargarRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarRedActionPerformed
-        // TODO add your handling code here:
+        grafoEDD.destruir();
+        CargaDeRed cargarRed= new CargaDeRed();
+        this.dispose();
+        
+        
     }//GEN-LAST:event_CargarRedActionPerformed
 
     private void SalirMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMenuActionPerformed
@@ -111,8 +125,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirMenuActionPerformed
 
     private void EstablecerValorTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstablecerValorTActionPerformed
-        // TODO add your handling code here:
+        EstablecerValorT establecerValorT = new EstablecerValorT();
+        this.dispose();
     }//GEN-LAST:event_EstablecerValorTActionPerformed
+
+    private void eliminarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarSucursalActionPerformed
+        
+    }//GEN-LAST:event_eliminarSucursalActionPerformed
 
     /**
      * @param args the command line arguments
