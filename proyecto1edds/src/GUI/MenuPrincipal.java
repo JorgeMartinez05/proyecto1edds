@@ -4,6 +4,9 @@
  */
 package GUI;
 
+import static GUI.CargaDeRed.grafoEDD;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jorge
@@ -50,35 +53,52 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Menu Principal");
+
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
+        colocarSucursal.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         colocarSucursal.setText("Colocar Sucursal");
         colocarSucursal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colocarSucursalActionPerformed(evt);
             }
         });
-        jPanel1.add(colocarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
+        jPanel1.add(colocarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
 
+        eliminarSucursal.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         eliminarSucursal.setText("Eliminar Sucursal");
-        jPanel1.add(eliminarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
+        eliminarSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarSucursalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eliminarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 180, -1));
 
+        Coberturas.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         Coberturas.setText("Coberturas");
-        jPanel1.add(Coberturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 120, -1));
+        jPanel1.add(Coberturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 160, 30));
 
+        EstablecerValorT.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         EstablecerValorT.setText("Establecer Valor T");
-        jPanel1.add(EstablecerValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+        EstablecerValorT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstablecerValorTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EstablecerValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 180, -1));
 
+        mostrarRed.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         mostrarRed.setText("Mostrar Red");
-        jPanel1.add(mostrarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 120, -1));
+        jPanel1.add(mostrarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 170, -1));
 
+        CargarRed.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         CargarRed.setText("Cargar Red");
         CargarRed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CargarRedActionPerformed(evt);
             }
         });
-        jPanel1.add(CargarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 120, -1));
+        jPanel1.add(CargarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 180, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 580, 290));
 
@@ -88,7 +108,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jMenu1ActionPerformed(evt);
             }
         });
-
         jMenuItem1.setText("Cerrar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,15 +120,21 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void colocarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colocarSucursalActionPerformed
-        // TODO add your handling code here:
+      ColocarSucursal colocarSucursal = new ColocarSucursal();
+      this.dispose();
     }//GEN-LAST:event_colocarSucursalActionPerformed
 
     private void CargarRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarRedActionPerformed
-        // TODO add your handling code here:
+        grafoEDD.destruir();
+        CargaDeRed cargarRed= new CargaDeRed();
+        this.dispose();
+        
+        
     }//GEN-LAST:event_CargarRedActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
@@ -118,6 +143,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
 System.exit(0);    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void EstablecerValorTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstablecerValorTActionPerformed
+        EstablecerValorT establecerValorT = new EstablecerValorT();
+        this.dispose();
+    }//GEN-LAST:event_EstablecerValorTActionPerformed
+
+    private void eliminarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarSucursalActionPerformed
+       if(grafoEDD.haySucursales()){
+           EliminarSucursal eliminarSucursal = new EliminarSucursal();
+           this.dispose();
+       }
+       else{
+           JOptionPane.showMessageDialog(null, "Debes agregar sucursales para poder entrar a esta sección");
+       }
+    }//GEN-LAST:event_eliminarSucursalActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +205,7 @@ System.exit(0);    }//GEN-LAST:event_jMenuItem1ActionPerformed
     private javax.swing.JButton EstablecerValorT;
     private javax.swing.JButton colocarSucursal;
     private javax.swing.JButton eliminarSucursal;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;

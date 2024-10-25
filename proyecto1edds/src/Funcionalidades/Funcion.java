@@ -7,6 +7,7 @@ package Funcionalidades;
 import EDD.Grafo;
 import EDD.Lista;
 import EDD.Vertice;
+import javax.swing.JOptionPane;
 import proyecto1edds.Estacion;
 
 /**
@@ -15,13 +16,14 @@ import proyecto1edds.Estacion;
  */
 public class Funcion {
     
-    public Lista estacionesSinSucursal (Grafo grafo) {
+    public Lista estacionesSinSucursal(Grafo grafo) {
         Lista nombresEstaciones = new Lista();
         for (int i = 0; i < grafo.getEstaciones().getSize(); i++) {
             Vertice verticeActual = (Vertice) grafo.getEstaciones().getValor(i);
             if (!verticeActual.getEstacion().isSucursal()) {
-                nombresEstaciones.insertarFinal(verticeActual.getEstacion().getNombre());
+                nombresEstaciones.insertarFinal(verticeActual.getEstacion().getNombre());      
             }
+           
         }
         
         return nombresEstaciones;
@@ -67,5 +69,8 @@ public class Funcion {
         vertices.insertarFinal(verticeNuevo);
         return verticeNuevo;
     }
+    
+    
+
     
 }
