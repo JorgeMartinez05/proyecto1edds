@@ -7,6 +7,7 @@ package Funcionalidades;
 import EDD.Grafo;
 import EDD.Lista;
 import EDD.Vertice;
+import javax.swing.JOptionPane;
 import proyecto1edds.Estacion;
 
 /**
@@ -66,6 +67,31 @@ public class Funcion {
         Vertice verticeNuevo = new Vertice(nuevaEstacion);
         vertices.insertarFinal(verticeNuevo);
         return verticeNuevo;
+    }
+    
+    public Lista estacionesSinSucursal(Lista vertices) {
+        Lista nombresEstaciones = new Lista();
+        for (int i = 0; i < vertices.getSize(); i++) {
+            Vertice verticeActual = (Vertice) vertices.getValor(i);
+            if (!verticeActual.getEstacion().isSucursal()) {
+                nombresEstaciones.insertarFinal(verticeActual.getEstacion().getNombre());      
+            }
+           
+        }
+        
+        return nombresEstaciones;
+    }
+    
+    public void colocarSucursal(Lista vertices, String nombre){
+        for (int i = 0; i < vertices.getSize(); i++) {
+            Vertice verticeActual = (Vertice) vertices.getValor(i);
+            if (!verticeActual.getEstacion().getNombre().equalsIgnoreCase(nombre)) {
+                verticeActual.getEstacion().setSucursal(true);
+                JOptionPane.showMessageDialog(null, "Sucursal agregada con éxito.");
+                break;
+            }
+           
+        }
     }
     
 }
