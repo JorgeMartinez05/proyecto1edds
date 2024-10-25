@@ -73,6 +73,20 @@ public class Grafo {
             JOptionPane.showMessageDialog(null, "No existe alguna de las estaciones.,");
         }
     }
+    
+    public boolean haySucursales(){
+        if (!this.estaciones.isEmpty()) {
+            for (int i = 0; i < estaciones.getSize(); i++) {
+                Vertice verticeActual = (Vertice) estaciones.getValor(i);
+                if(verticeActual.getEstacion().isSucursal()) {
+                    return true;
+                }
+            }
+            return false; 
+        }
+        
+        return false;
+    }
 
     public void InsertarVertice(Vertice vertice) {
         String nombre = vertice.getEstacion().getNombre();
@@ -85,18 +99,6 @@ public class Grafo {
         }
     }
 
-    public boolean haySucursales() {
-        if (!this.estaciones.isEmpty()) {
-            for (int i = 0; i < estaciones.getSize(); i++) {
-                Vertice verticeActual = (Vertice) estaciones.getValor(i);
-                if (verticeActual.getEstacion().isSucursal()) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        return false;
-    }
 
     @Override
     public String toString() {

@@ -5,6 +5,7 @@
 package GUI;
 
 import static GUI.CargaDeRed.grafoEDD;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,6 +41,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         mostrarRed = new javax.swing.JButton();
         CargarRed = new javax.swing.JButton();
         SalirMenu = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,7 +60,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 colocarSucursalActionPerformed(evt);
             }
         });
-        jPanel1.add(colocarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
+        jPanel1.add(colocarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
 
         eliminarSucursal.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         eliminarSucursal.setText("Eliminar Sucursal");
@@ -67,11 +69,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 eliminarSucursalActionPerformed(evt);
             }
         });
-        jPanel1.add(eliminarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(344, 100, 180, -1));
+        jPanel1.add(eliminarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 180, -1));
 
         Coberturas.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         Coberturas.setText("Coberturas");
-        jPanel1.add(Coberturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 160, 30));
+        jPanel1.add(Coberturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 160, 30));
 
         EstablecerValorT.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         EstablecerValorT.setText("Establecer Valor T");
@@ -80,11 +82,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 EstablecerValorTActionPerformed(evt);
             }
         });
-        jPanel1.add(EstablecerValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(341, 140, 180, -1));
+        jPanel1.add(EstablecerValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 180, -1));
 
         mostrarRed.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         mostrarRed.setText("Mostrar Red");
-        jPanel1.add(mostrarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 170, -1));
+        jPanel1.add(mostrarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 170, -1));
 
         CargarRed.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         CargarRed.setText("Cargar Red");
@@ -93,7 +95,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 CargarRedActionPerformed(evt);
             }
         });
-        jPanel1.add(CargarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 180, -1));
+        jPanel1.add(CargarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 180, -1));
 
         SalirMenu.setText("X");
         SalirMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +104,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SalirMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 60, 50));
+
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jButton1.setText("Agregar Lineas");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 230, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 580, 290));
 
@@ -131,8 +142,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_EstablecerValorTActionPerformed
 
     private void eliminarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarSucursalActionPerformed
-        
+       if(grafoEDD.haySucursales()){
+           EliminarSucursal eliminarSucursal = new EliminarSucursal();
+           this.dispose();
+       }
+       else{
+           JOptionPane.showMessageDialog(null, "Debes agregar sucursales para poder entrar a esta sección");
+       }
     }//GEN-LAST:event_eliminarSucursalActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,6 +198,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton SalirMenu;
     private javax.swing.JButton colocarSucursal;
     private javax.swing.JButton eliminarSucursal;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton mostrarRed;
