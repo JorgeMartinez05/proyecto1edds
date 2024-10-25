@@ -4,6 +4,8 @@
  */
 package proyecto1edds;
 
+import EDD.Grafo;
+
 /**
  *
  * @author jorge
@@ -19,6 +21,18 @@ public class Main {
         Estacion estacion3 = new Estacion("Altamira");
         Estacion estacion4 = new Estacion("Chacao");
         System.out.println(estacion);
+        Grafo grafo = new Grafo();
+
+        grafo.insertar(estacion);
+        grafo.insertar(estacion2);
+        grafo.insertar(estacion3);
+        grafo.insertar(estacion4);
+
+        grafo.agregarConexion("Los Dos Caminos", "Parque del Este");
+        grafo.agregarConexion("Parque del Este", "Altamira");
+        grafo.agregarConexion("Altamira", "Chacao");
+
+        System.out.println(grafo.toString());
     }
-    
+
 }
