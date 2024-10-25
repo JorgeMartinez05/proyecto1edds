@@ -19,13 +19,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author jorge
  */
 public class JSONFileSelector {
+
     public void buscarArchivoJson(JTextPane ruta, JTextArea contenido, JFrame cargar) {
         JFileChooser fc = new JFileChooser();
 
-        // Creo el filtro para archivos .json
+        // Creo  filtro para archivos .json
         FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos JSON (*.json)", "json");
 
-        // Le indico el filtro
+        // Indico el filtro
         fc.setFileFilter(filtro);
 
         // Deshabilito la opción de aceptar todos los tipos de archivos
