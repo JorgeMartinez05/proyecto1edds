@@ -28,8 +28,9 @@ public class ColocarSucursal extends javax.swing.JFrame {
 
     
     private void llenarComboBoxEstaciones() {
-        Lista nombres = funcion.estacionesSinSucursal(grafoEDD.getEstaciones());
-        for (int i = 0; i<nombres.getSize(); i++) {
+        modeloEstaciones.removeAllElements();
+        Lista nombres = funcion.estacionesSinSucursal(grafoEDD);
+        for (int i = 0; i < nombres.getSize(); i++) {
             String nombreActual = (String) nombres.getValor(i);
             modeloEstaciones.addElement(nombreActual);
         }
@@ -42,7 +43,7 @@ public class ColocarSucursal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        estaciones = new javax.swing.JComboBox<>();
+        estacionesSinSucursal = new javax.swing.JComboBox<>();
         colocarSucursal = new javax.swing.JButton();
         irMenu = new javax.swing.JButton();
 
@@ -59,8 +60,8 @@ public class ColocarSucursal extends javax.swing.JFrame {
         jLabel2.setText("Selecciona la estación donde desees colocar la sucursal");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
 
-        estaciones.setModel(modeloEstaciones);
-        jPanel1.add(estaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 290, -1));
+        estacionesSinSucursal.setModel(modeloEstaciones);
+        jPanel1.add(estacionesSinSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 290, -1));
 
         colocarSucursal.setText("Colocar Sucursal");
         colocarSucursal.addActionListener(new java.awt.event.ActionListener() {
@@ -84,11 +85,14 @@ public class ColocarSucursal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void colocarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colocarSucursalActionPerformed
-        // TODO add your handling code here:
+        String nombre = (String) estacionesSinSucursal.getSelectedItem();
+        grafoEDD.buscarEstacion(nombre).getEstacion().setSucursal(true);
+        this.llenarComboBoxEstaciones();
     }//GEN-LAST:event_colocarSucursalActionPerformed
 
     private void irMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_irMenuActionPerformed
-        // TODO add your handling code here:
+       MenuPrincipal menu = new MenuPrincipal();
+       this.dispose();
     }//GEN-LAST:event_irMenuActionPerformed
 
     /**
@@ -128,7 +132,7 @@ public class ColocarSucursal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton colocarSucursal;
-    private javax.swing.JComboBox<String> estaciones;
+    private javax.swing.JComboBox<String> estacionesSinSucursal;
     private javax.swing.JButton irMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

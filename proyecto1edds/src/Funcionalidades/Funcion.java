@@ -16,13 +16,14 @@ import proyecto1edds.Estacion;
  */
 public class Funcion {
     
-    public Lista estacionesSinSucursal (Grafo grafo) {
+    public Lista estacionesSinSucursal(Grafo grafo) {
         Lista nombresEstaciones = new Lista();
         for (int i = 0; i < grafo.getEstaciones().getSize(); i++) {
             Vertice verticeActual = (Vertice) grafo.getEstaciones().getValor(i);
             if (!verticeActual.getEstacion().isSucursal()) {
-                nombresEstaciones.insertarFinal(verticeActual.getEstacion().getNombre());
+                nombresEstaciones.insertarFinal(verticeActual.getEstacion().getNombre());      
             }
+           
         }
         
         return nombresEstaciones;
@@ -69,29 +70,7 @@ public class Funcion {
         return verticeNuevo;
     }
     
-    public Lista estacionesSinSucursal(Lista vertices) {
-        Lista nombresEstaciones = new Lista();
-        for (int i = 0; i < vertices.getSize(); i++) {
-            Vertice verticeActual = (Vertice) vertices.getValor(i);
-            if (!verticeActual.getEstacion().isSucursal()) {
-                nombresEstaciones.insertarFinal(verticeActual.getEstacion().getNombre());      
-            }
-           
-        }
-        
-        return nombresEstaciones;
-    }
+   
     
-    public void colocarSucursal(Lista vertices, String nombre){
-        for (int i = 0; i < vertices.getSize(); i++) {
-            Vertice verticeActual = (Vertice) vertices.getValor(i);
-            if (!verticeActual.getEstacion().getNombre().equalsIgnoreCase(nombre)) {
-                verticeActual.getEstacion().setSucursal(true);
-                JOptionPane.showMessageDialog(null, "Sucursal agregada con éxito.");
-                break;
-            }
-           
-        }
-    }
     
 }

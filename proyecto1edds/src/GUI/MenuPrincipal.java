@@ -109,7 +109,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void colocarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colocarSucursalActionPerformed
-      
+      ColocarSucursal colocarSucursal = new ColocarSucursal();
+      this.dispose();
     }//GEN-LAST:event_colocarSucursalActionPerformed
 
     private void CargarRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarRedActionPerformed
