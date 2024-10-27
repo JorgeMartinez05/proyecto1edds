@@ -61,13 +61,13 @@ public class Grafo {
         }
     }
 
-    public void agregarConexion(String nombre1, String nombre2) {
-        Estacion estacionInicial = this.buscarEstacion(nombre1).getEstacion();
-        Estacion estacionFinal = this.buscarEstacion(nombre2).getEstacion();
+     public void agregarConexion(String nombre1, String nombre2) {
+        Vertice verticeInicial = this.buscarEstacion(nombre1);
+        Vertice verticeFinal = this.buscarEstacion(nombre2);
 
-        if (estacionInicial != null && estacionFinal != null) {
-            this.buscarEstacion(nombre1).getAdyacentes().insertarFinal(estacionFinal);
-            this.buscarEstacion(nombre2).getAdyacentes().insertarFinal(estacionInicial);
+        if (verticeInicial != null && verticeFinal != null) {
+            this.buscarEstacion(nombre1).getAdyacentes().insertarFinal(verticeFinal);
+            this.buscarEstacion(nombre2).getAdyacentes().insertarFinal(verticeInicial);
             JOptionPane.showMessageDialog(null, "Conexion agregada con exito");
         } else {
             JOptionPane.showMessageDialog(null, "No existe alguna de las estaciones.,");
