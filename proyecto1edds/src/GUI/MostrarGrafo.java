@@ -4,7 +4,6 @@
  */
 package GUI;
 
-<<<<<<< Updated upstream
 import EDD.Grafo;
 import EDD.Lista;
 import EDD.Vertice;
@@ -19,13 +18,10 @@ import org.graphstream.ui.swing_viewer.ViewPanel;
 import org.graphstream.ui.view.Viewer;
 import proyecto1edds.Estacion;
 
-=======
->>>>>>> Stashed changes
 /**
  *
  * @author eabdf
  */
-<<<<<<< Updated upstream
 public class MostrarGrafo extends JFrame {
 
     private Grafo grafo;
@@ -132,8 +128,4 @@ public class MostrarGrafo extends JFrame {
         }
     }
 
-=======
-public class MostrarGrafo {
-    
->>>>>>> Stashed changes
 }

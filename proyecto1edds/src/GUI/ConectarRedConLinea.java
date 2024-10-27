@@ -34,19 +34,11 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
     }
 
     private void llenarComboBoxs() {
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         Lista nombresRed = function.mostrarEstaciones(grafoEDD);
         Lista nombresLinea = function.mostrarListaVertice(nuevosVertices);
 
         for (int i = 0; i < nombresRed.getSize(); i++) {
             modelEstacionesRed.addElement(nombresRed.getValor(i));
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         }
 
         for (int i = 0; i < nombresLinea.getSize(); i++) {
@@ -75,7 +67,6 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-<<<<<<< Updated upstream
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
@@ -84,22 +75,6 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
 
         estacionesRed.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(estacionesRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
-=======
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel1.setText("Conectar red a linea nueva");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
-
-        estacionesLinea.setModel(modelEstacionesLinea);
-        estacionesLinea.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                estacionesLineaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(estacionesLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 170, -1));
-
-        estacionesRed.setModel(modelEstacionesLinea);
-        jPanel1.add(estacionesRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, -1));
->>>>>>> Stashed changes
 
         conectarLineaRed.setText("jButton1");
         conectarLineaRed.addActionListener(new java.awt.event.ActionListener() {
@@ -107,32 +82,18 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
                 conectarLineaRedActionPerformed(evt);
             }
         });
-<<<<<<< Updated upstream
         jPanel1.add(conectarLineaRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 360));
-=======
-        jPanel1.add(conectarLineaRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 350));
->>>>>>> Stashed changes
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< Updated upstream
-=======
-    private void estacionesLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estacionesLineaActionPerformed
-
-    }//GEN-LAST:event_estacionesLineaActionPerformed
-
->>>>>>> Stashed changes
     private void conectarLineaRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conectarLineaRedActionPerformed
         for (int i = 0; i < nuevosVertices.getSize(); i++) {
             Vertice verticeActual = (Vertice) nuevosVertices.getValor(i);
             grafoEDD.InsertarVertice(verticeActual);
         }
-<<<<<<< Updated upstream
 
         String nombre1 = (String) estacionesRed.getSelectedItem();
         String nombre2 = (String) estacionesLinea.getSelectedItem();
@@ -141,18 +102,6 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
 
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         this.dispose();
-=======
-        
-        String nombre1 = (String)estacionesRed.getSelectedItem();
-        String nombre2 = (String)estacionesLinea.getSelectedItem();
-        
-        grafoEDD.agregarConexion(nombre1, nombre2);
-        
-        MenuPrincipal menuprincipal = new MenuPrincipal();
-        this.dispose();
-
-
->>>>>>> Stashed changes
     }//GEN-LAST:event_conectarLineaRedActionPerformed
 
     /**
