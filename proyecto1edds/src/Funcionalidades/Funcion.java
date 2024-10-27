@@ -40,6 +40,26 @@ public class Funcion {
         
         return nombresEstaciones;
     }
+    public Lista mostrarEstaciones(Grafo grafo) {
+        Lista nombresEstaciones = new Lista();
+        for (int i = 0; i < grafo.getEstaciones().getSize(); i++) {
+            Vertice verticeActual = (Vertice) grafo.getEstaciones().getValor(i);
+            nombresEstaciones.insertarFinal(verticeActual.getEstacion().getNombre());
+
+        }
+
+        return nombresEstaciones;
+    }
+    
+    public Lista mostrarListaVertice(Lista vertices){
+        Lista nombreVertices = new Lista();
+        for (int i = 0; i < vertices.getSize(); i++) {
+            Vertice verticeActual = (Vertice) vertices.getValor(i);
+            nombreVertices.insertarFinal(verticeActual.getEstacion().getNombre());
+        }
+        
+        return nombreVertices;
+    }
     
     public String mostrarLinea (Lista linea) {
         if (linea.isEmpty()) {
