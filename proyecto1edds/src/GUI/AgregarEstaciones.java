@@ -144,27 +144,8 @@ public class AgregarEstaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_siguientePasoActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        if (!linea.isEmpty()) {
-
-            for (int i = 0; i < linea.getSize() - 1; i++) {
-                String nombreEstacion = (String) linea.getValor(i); 
-                String nombreFuturo = (String) linea.getValor(i + 1);    
-
-                Estacion estacionNueva = new Estacion(nombreEstacion);
-                Estacion estacionFutura = new Estacion(nombreFuturo);
-
-                Vertice verticeNuevo = function.obtenerOcrearVertice(nombreEstacion, nuevosVertices);
-                Vertice verticeFuturo = function.obtenerOcrearVertice(nombreFuturo, nuevosVertices);
-                
-                verticeFuturo.getAdyacentes().insertarFinal(verticeNuevo);
-                verticeNuevo.getAdyacentes().insertarFinal(verticeFuturo);     
-            }
-            nuevosVertices.mostrar();
-
-          
-        } else {
-            JOptionPane.showMessageDialog(null, "La linea esta vacia. Debes agregar estaciones a la linea para continuar.");
-        }
+        MenuPrincipal menu = new MenuPrincipal();
+        this.dispose();
     }//GEN-LAST:event_SalirActionPerformed
 
     /**

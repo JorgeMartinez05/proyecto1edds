@@ -4,6 +4,7 @@
  */
 package EDD;
 
+import javax.swing.JOptionPane;
 import proyecto1edds.Estacion;
 
 /**
@@ -63,10 +64,23 @@ public class Vertice {
             return nombreEstaciones;
         }
     }
-
-    @Override
-    public String toString() {
-        return estacion.toString() + "\nNumero de Vertice: " + numVertice + "\nCiudades adyacentes: " + adyacentes;
+    public String mostrarListaAdyacencia(){
+        if(!this.adyacentes.isEmpty()){
+            return adyacentes.transformar();
+        }
+        return null;
     }
+    
+    @Override
+    public String toString(){
+        if(this.mostrarListaAdyacencia() != null){
+            return numVertice + "," + estacion.getNombre()+"->" +this.mostrarListaAdyacencia();
+        }
+        return numVertice + ", " + estacion.getNombre();
+    }
+     public void mostrar(){
+        JOptionPane.showMessageDialog(null, this.toString());
+    }
+    
 
 }
