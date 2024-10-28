@@ -14,7 +14,13 @@ import javax.swing.JOptionPane;
  * @author eabdf
  */
 public class BFS {
-    
+    /**
+     * Realiza un recorrido BFS (búsqueda en anchura) desde una estación inicial, mostrando todas las estaciones
+     * accesibles dentro de una distancia máxima.
+     * 
+     * @param puntoInicio el vértice de la estación desde donde comienza el recorrido.
+     * @param maxDistancia la distancia máxima permitida para el recorrido.
+     */
     public void recorridoBFS (Vertice puntoInicio, int maxDistancia) {
         
         String camino = "Partiendo desde: " + puntoInicio.getEstacion().getNombre()+ "\n";
