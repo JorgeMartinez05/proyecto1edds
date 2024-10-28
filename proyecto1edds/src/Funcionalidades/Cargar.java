@@ -49,7 +49,6 @@ public class Cargar {
                 }
                 else if (redElement.isJsonArray()) {
                     JsonArray lineasArray = redElement.getAsJsonArray();
-                    
                     for(JsonElement elementoLinea : lineasArray) {
                         if (elementoLinea.isJsonObject()) {
                             JsonObject lineaObject = elementoLinea.getAsJsonObject();

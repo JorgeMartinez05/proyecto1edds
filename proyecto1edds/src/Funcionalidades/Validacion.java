@@ -27,4 +27,16 @@ public class Validacion {
         }
     }
 
+    public int validarTipoBusqueda(String nombreTipo) {
+        if (nombreTipo.equalsIgnoreCase("BFS") || nombreTipo.equalsIgnoreCase("DFS")) {
+            if (nombreTipo.equalsIgnoreCase("BFS")) {
+                return 0;
+            }
+
+            return 1;
+        }
+
+        return -1;
+
+    }
 }
