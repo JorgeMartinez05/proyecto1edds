@@ -40,6 +40,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         EstablecerValorT = new javax.swing.JButton();
         mostrarRed = new javax.swing.JButton();
         CargarRed = new javax.swing.JButton();
+        AgregarLineas = new javax.swing.JButton();
+        SalirMenu = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -53,7 +55,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Menu Principal");
-
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         colocarSucursal.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -76,6 +77,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         Coberturas.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         Coberturas.setText("Coberturas");
+        Coberturas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CoberturasActionPerformed(evt);
+            }
+        });
         jPanel1.add(Coberturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 160, 30));
 
         EstablecerValorT.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -89,6 +95,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         mostrarRed.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         mostrarRed.setText("Mostrar Red");
+        mostrarRed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarRedActionPerformed(evt);
+            }
+        });
         jPanel1.add(mostrarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 170, -1));
 
         CargarRed.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -100,6 +111,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(CargarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 180, -1));
 
+        AgregarLineas.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        AgregarLineas.setText("Agregar Lineas");
+        AgregarLineas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarLineasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(AgregarLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 230, -1));
+
+        SalirMenu.setText("X");
+        SalirMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirMenuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SalirMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 50, 50));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 580, 290));
 
         jMenu1.setText("inicio");
@@ -108,6 +136,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jMenu1ActionPerformed(evt);
             }
         });
+
         jMenuItem1.setText("Cerrar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,21 +149,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void colocarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colocarSucursalActionPerformed
-      ColocarSucursal colocarSucursal = new ColocarSucursal();
-      this.dispose();
+        ColocarSucursal colocarSucursal = new ColocarSucursal();
+        this.dispose();
     }//GEN-LAST:event_colocarSucursalActionPerformed
 
     private void CargarRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarRedActionPerformed
         grafoEDD.destruir();
-        CargaDeRed cargarRed= new CargaDeRed();
+        CargaDeRed cargarRed = new CargaDeRed();
         this.dispose();
-        
-        
+
+
     }//GEN-LAST:event_CargarRedActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
@@ -150,18 +178,38 @@ System.exit(0);    }//GEN-LAST:event_jMenuItem1ActionPerformed
     }//GEN-LAST:event_EstablecerValorTActionPerformed
 
     private void eliminarSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarSucursalActionPerformed
-       if(grafoEDD.haySucursales()){
-           EliminarSucursal eliminarSucursal = new EliminarSucursal();
-           this.dispose();
-       }
-       else{
-           JOptionPane.showMessageDialog(null, "Debes agregar sucursales para poder entrar a esta sección");
-       }
+        if (grafoEDD.haySucursales()) {
+            EliminarSucursal eliminarSucursal = new EliminarSucursal();
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes agregar sucursales para poder entrar a esta sección");
+        }
     }//GEN-LAST:event_eliminarSucursalActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void AgregarLineasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarLineasActionPerformed
+        AgregarEstaciones aggEstaciones = new AgregarEstaciones();
+        this.dispose();
+    }//GEN-LAST:event_AgregarLineasActionPerformed
+
+    private void CoberturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CoberturasActionPerformed
+        if (grafoEDD.haySucursales()) {
+            Coberturas cobertura = new Coberturas();
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes agregar suscursales para poder entrar a esta seccion");
+        }
+    }//GEN-LAST:event_CoberturasActionPerformed
+
+    private void SalirMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirMenuActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_SalirMenuActionPerformed
+
+    private void mostrarRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarRedActionPerformed
+       System.setProperty("org.graphstream.ui", "swing");
+        MostrarGrafo mostrarGrafo = new MostrarGrafo(grafoEDD);
+        mostrarGrafo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mostrarRedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,12 +248,13 @@ System.exit(0);    }//GEN-LAST:event_jMenuItem1ActionPerformed
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AgregarLineas;
     private javax.swing.JButton CargarRed;
     private javax.swing.JButton Coberturas;
     private javax.swing.JButton EstablecerValorT;
+    private javax.swing.JButton SalirMenu;
     private javax.swing.JButton colocarSucursal;
     private javax.swing.JButton eliminarSucursal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;

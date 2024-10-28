@@ -5,6 +5,7 @@
 package GUI;
 
 import EDD.Lista;
+import EDD.Vertice;
 import Funcionalidades.Funcion;
 import static GUI.AgregarEstaciones.nuevosVertices;
 import static GUI.CargaDeRed.grafoEDD;
@@ -54,39 +55,49 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         estacionesLinea = new javax.swing.JComboBox<>();
         estacionesRed = new javax.swing.JComboBox<>();
         conectarLineaRed = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        estacionesLinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(estacionesLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
+        estacionesLinea.setModel(modelEstacionesLinea);
+        jPanel2.add(estacionesLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
 
-        estacionesRed.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(estacionesRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
+        estacionesRed.setModel(modelEstacionesRed);
+        jPanel2.add(estacionesRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, -1));
 
-        conectarLineaRed.setText("jButton1");
-        jPanel1.add(conectarLineaRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
+        conectarLineaRed.setText("Conectar linea con red");
+        conectarLineaRed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                conectarLineaRedActionPerformed(evt);
+            }
+        });
+        jPanel2.add(conectarLineaRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void conectarLineaRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conectarLineaRedActionPerformed
+        for (int i = 0; i < nuevosVertices.getSize(); i++) {
+            Vertice verticeActual = (Vertice) nuevosVertices.getValor(i);
+            grafoEDD.InsertarVertice(verticeActual);
+        }
+        
+        String nombre1 = (String) estacionesRed.getSelectedItem();
+        String nombre2 = (String) estacionesLinea.getSelectedItem();
+        
+        grafoEDD.agregarConexion(nombre1, nombre2);
+        
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        this.dispose();
+    }//GEN-LAST:event_conectarLineaRedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,6 +138,6 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
     private javax.swing.JButton conectarLineaRed;
     private javax.swing.JComboBox<String> estacionesLinea;
     private javax.swing.JComboBox<String> estacionesRed;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
