@@ -92,6 +92,7 @@ public class Grafo {
         String nombre = vertice.getEstacion().getNombre();
         if (buscarEstacion(nombre) == null) {
             vertice.setNumVertice(this.estaciones.getSize());
+            this.estaciones.insertarFinal(vertice);
 
         } else {
             JOptionPane.showMessageDialog(null, "El vertice ya se encuentra insertado");
