@@ -45,17 +45,18 @@ public class EstablecerValorT extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 255));
-        jLabel1.setText("ESTABLECER VALOR DE T ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
+        jLabel1.setText("Establecer valor de T ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel2.setText("Ingresa el valor de T:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
-        jPanel1.add(inputNuevoValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 240, 50));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        jPanel1.add(inputNuevoValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 240, 50));
 
         cambiar.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         cambiar.setText("cambiar");
@@ -64,27 +65,26 @@ public class EstablecerValorT extends javax.swing.JFrame {
                 cambiarActionPerformed(evt);
             }
         });
-        jPanel1.add(cambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, -1, -1));
+        jPanel1.add(cambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel3.setText("Valor actual de T:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
         valorActual.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         valorActual.setForeground(new java.awt.Color(0, 0, 255));
-        valorActual.setText("T");
-        jPanel1.add(valorActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 50, -1));
+        jPanel1.add(valorActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 20, -1));
 
-        IrMenu.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        IrMenu.setText("Ir a Menu");
+        IrMenu.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        IrMenu.setText("Ir al menú");
         IrMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IrMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(IrMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
+        jPanel1.add(IrMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 410));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

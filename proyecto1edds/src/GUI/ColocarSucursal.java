@@ -50,28 +50,32 @@ public class ColocarSucursal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel1.setText("Colocar Sucursal");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+        jLabel1.setText("Colocar sucursal");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
 
-        jLabel2.setText("Selecciona la estación donde desees colocar la sucursal");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel2.setText("Seleccione la estación donde desees colocar la sucursal:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
         estacionesSinSucursal.setModel(modeloEstaciones);
-        jPanel1.add(estacionesSinSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 290, -1));
+        jPanel1.add(estacionesSinSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 290, -1));
 
-        colocarSucursal.setText("Colocar Sucursal");
+        colocarSucursal.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        colocarSucursal.setText("Colocar sucursal");
         colocarSucursal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colocarSucursalActionPerformed(evt);
             }
         });
-        jPanel1.add(colocarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, -1));
+        jPanel1.add(colocarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 200, -1));
 
-        irMenu.setText("Ir a Menu");
+        irMenu.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        irMenu.setText("Ir al menú");
         irMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 irMenuActionPerformed(evt);
@@ -79,7 +83,7 @@ public class ColocarSucursal extends javax.swing.JFrame {
         });
         jPanel1.add(irMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 390));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
