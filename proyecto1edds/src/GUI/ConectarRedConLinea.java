@@ -59,27 +59,45 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
         estacionesLinea = new javax.swing.JComboBox<>();
         estacionesRed = new javax.swing.JComboBox<>();
         conectarLineaRed = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         estacionesLinea.setModel(modelEstacionesLinea);
-        jPanel2.add(estacionesLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+        jPanel2.add(estacionesLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
         estacionesRed.setModel(modelEstacionesRed);
-        jPanel2.add(estacionesRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, -1));
+        jPanel2.add(estacionesRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
-        conectarLineaRed.setText("Conectar linea con red");
+        conectarLineaRed.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        conectarLineaRed.setText("Conectar");
         conectarLineaRed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 conectarLineaRedActionPerformed(evt);
             }
         });
-        jPanel2.add(conectarLineaRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+        jPanel2.add(conectarLineaRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 320));
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setText("Conectar red con línea");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel2.setText("Seleccione la estación de la nueva línea:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel3.setText("Seleccione la estación de la red de transporte:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -138,6 +156,9 @@ public class ConectarRedConLinea extends javax.swing.JFrame {
     private javax.swing.JButton conectarLineaRed;
     private javax.swing.JComboBox<String> estacionesLinea;
     private javax.swing.JComboBox<String> estacionesRed;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

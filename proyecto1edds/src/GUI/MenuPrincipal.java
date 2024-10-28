@@ -42,38 +42,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
         CargarRed = new javax.swing.JButton();
         AgregarLineas = new javax.swing.JButton();
         SalirMenu = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Menu Principal");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
 
         colocarSucursal.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        colocarSucursal.setText("Colocar Sucursal");
+        colocarSucursal.setText("Colocar sucursal");
         colocarSucursal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colocarSucursalActionPerformed(evt);
             }
         });
-        jPanel1.add(colocarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        jPanel1.add(colocarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 180, -1));
 
         eliminarSucursal.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        eliminarSucursal.setText("Eliminar Sucursal");
+        eliminarSucursal.setText("Eliminar sucursal");
         eliminarSucursal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarSucursalActionPerformed(evt);
             }
         });
-        jPanel1.add(eliminarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 180, -1));
+        jPanel1.add(eliminarSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 180, -1));
 
         Coberturas.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         Coberturas.setText("Coberturas");
@@ -82,72 +79,55 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 CoberturasActionPerformed(evt);
             }
         });
-        jPanel1.add(Coberturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 160, 30));
+        jPanel1.add(Coberturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 180, 30));
 
         EstablecerValorT.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        EstablecerValorT.setText("Establecer Valor T");
+        EstablecerValorT.setText("Establecer valor T");
         EstablecerValorT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EstablecerValorTActionPerformed(evt);
             }
         });
-        jPanel1.add(EstablecerValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 180, -1));
+        jPanel1.add(EstablecerValorT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
         mostrarRed.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        mostrarRed.setText("Mostrar Red");
+        mostrarRed.setText("Mostrar red");
         mostrarRed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mostrarRedActionPerformed(evt);
             }
         });
-        jPanel1.add(mostrarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 170, -1));
+        jPanel1.add(mostrarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 180, -1));
 
         CargarRed.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        CargarRed.setText("Cargar Red");
+        CargarRed.setText("Cargar red");
         CargarRed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CargarRedActionPerformed(evt);
             }
         });
-        jPanel1.add(CargarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 180, -1));
+        jPanel1.add(CargarRed, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 180, -1));
 
         AgregarLineas.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        AgregarLineas.setText("Agregar Lineas");
+        AgregarLineas.setText("Agregar línea");
         AgregarLineas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AgregarLineasActionPerformed(evt);
             }
         });
-        jPanel1.add(AgregarLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 230, -1));
+        jPanel1.add(AgregarLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 170, -1));
 
+        SalirMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        SalirMenu.setForeground(new java.awt.Color(0, 0, 255));
         SalirMenu.setText("X");
         SalirMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(SalirMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 50, 50));
+        jPanel1.add(SalirMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 30, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 580, 290));
-
-        jMenu1.setText("inicio");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
-            }
-        });
-
-        jMenuItem1.setText("Cerrar");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem1);
-
-        jMenuBar1.add(jMenu1);
-
-        setJMenuBar(jMenuBar1);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -164,13 +144,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_CargarRedActionPerformed
-
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu1ActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-System.exit(0);    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void EstablecerValorTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstablecerValorTActionPerformed
         EstablecerValorT establecerValorT = new EstablecerValorT();
@@ -256,9 +229,6 @@ System.exit(0);    }//GEN-LAST:event_jMenuItem1ActionPerformed
     private javax.swing.JButton colocarSucursal;
     private javax.swing.JButton eliminarSucursal;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton mostrarRed;
     // End of variables declaration//GEN-END:variables

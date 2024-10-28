@@ -65,15 +65,17 @@ public class Coberturas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel1.setText("Revisar Coberturas");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, 20));
+        jLabel1.setText("Revisar coberturas");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 320, 40));
 
-        jLabel2.setText("Seleccionar estación: ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, 20));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel2.setText("Seleccione la estación: ");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, 20));
 
         nombreEstacionInicial.setModel(estacionesCobertura);
         nombreEstacionInicial.addActionListener(new java.awt.event.ActionListener() {
@@ -81,25 +83,27 @@ public class Coberturas extends javax.swing.JFrame {
                 nombreEstacionInicialActionPerformed(evt);
             }
         });
-        jPanel1.add(nombreEstacionInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 360, -1));
+        jPanel1.add(nombreEstacionInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 360, -1));
 
+        revisarCobertura.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         revisarCobertura.setText("Revisar Cobertura");
         revisarCobertura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 revisarCoberturaActionPerformed(evt);
             }
         });
-        jPanel1.add(revisarCobertura, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 180, -1));
+        jPanel1.add(revisarCobertura, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 180, -1));
 
-        volverMenu.setText("Volver al Menu");
+        volverMenu.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        volverMenu.setText("Ir al menú");
         volverMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 volverMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(volverMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, -1, -1));
+        jPanel1.add(volverMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 320));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

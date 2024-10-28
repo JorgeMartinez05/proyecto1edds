@@ -44,7 +44,6 @@ public class AgregarEstaciones extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         inputEstacion = new javax.swing.JTextField();
         aggEstacion = new javax.swing.JButton();
@@ -54,53 +53,56 @@ public class AgregarEstaciones extends javax.swing.JFrame {
         lineaNueva = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(550, 371));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel1.setText("Agregacion Lineas");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setText("Agregar líneas");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setText("Agregar Estaciones");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel3.setText("Nombre de la estación:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+        jPanel1.add(inputEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 210, -1));
 
-        jLabel3.setText("Nombre de la Estacion:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
-        jPanel1.add(inputEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 210, -1));
-
+        aggEstacion.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         aggEstacion.setText("Agregar Estacion");
         aggEstacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aggEstacionActionPerformed(evt);
             }
         });
-        jPanel1.add(aggEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
+        jPanel1.add(aggEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
 
+        siguientePaso.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         siguientePaso.setText("Siguiente");
         siguientePaso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 siguientePasoActionPerformed(evt);
             }
         });
-        jPanel1.add(siguientePaso, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, -1, -1));
+        jPanel1.add(siguientePaso, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, -1, -1));
 
+        Salir.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         Salir.setText("Salir");
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirActionPerformed(evt);
             }
         });
-        jPanel1.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, -1));
+        jPanel1.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
         lineaNueva.setColumns(20);
         lineaNueva.setRows(5);
         jScrollPane1.setViewportView(lineaNueva);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 260, 110));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 420, 110));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 470, 380));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -188,7 +190,6 @@ public class AgregarEstaciones extends javax.swing.JFrame {
     private javax.swing.JButton aggEstacion;
     private javax.swing.JTextField inputEstacion;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

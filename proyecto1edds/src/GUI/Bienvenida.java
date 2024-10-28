@@ -38,36 +38,38 @@ public class Bienvenida extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 3, 42)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel1.setText("BIENVENIDOS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 200, -1));
+        jLabel1.setText("BIENVENIDO");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 330, -1));
 
-        empezar.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        empezar.setForeground(new java.awt.Color(0, 51, 255));
-        empezar.setText("comenzar");
+        empezar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        empezar.setText("pulse para comenzar");
         empezar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 empezarActionPerformed(evt);
             }
         });
-        jPanel1.add(empezar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 240, -1));
+        jPanel1.add(empezar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 180, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jLabel2.setText("Integrantes: Enrique Bejarano, Enrique Leon, Jorge Martinez");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 470, -1));
+        jLabel2.setText("Integrantes: Enrique Bejarano, Enrique León y Jorge Martinez");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 490, -1));
 
+        exit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        exit.setForeground(new java.awt.Color(0, 0, 255));
         exit.setText("X");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
             }
         });
-        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 50, 50));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 30, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

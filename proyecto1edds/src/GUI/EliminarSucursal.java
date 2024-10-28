@@ -55,34 +55,39 @@ public class EliminarSucursal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setForeground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel1.setText("Eliminar Sucursal");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+        jLabel1.setText("Eliminar sucursal");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel2.setText("Seleccione la estación en la cual desea eliminar una sucursal:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
 
         estacionesConSucursal.setModel(modeloEstacionesConSucursal);
-        jPanel1.add(estacionesConSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 320, -1));
+        jPanel1.add(estacionesConSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 320, -1));
 
-        jButton1.setText("Eliminar Sucursal");
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jButton1.setText("Eliminar sucursal");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 320, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 320, -1));
 
-        irAlMenu.setText("Ir a Menu");
+        irAlMenu.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        irAlMenu.setText("Ir al menú");
         irAlMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 irAlMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(irAlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, -1, -1));
+        jPanel1.add(irAlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 410));
 
