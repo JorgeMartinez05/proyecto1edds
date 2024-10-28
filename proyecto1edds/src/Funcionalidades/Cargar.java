@@ -19,30 +19,39 @@ import proyecto1edds.Estacion;
  * @author eabdf
  */
 public class Cargar {
-    private Lista vertices = new Lista();
-    
+    private Lista vertices = new Lista(); // Lista de vértices (estaciones)
+     /**
+     * Retorna la lista de vértices (estaciones) cargados.
+     * @return lista de vértices.
+     */
     public Lista getVertices() {
         return vertices;
     }
-    
+    /**
+     * Establece la lista de vértices (estaciones).
+     * @param vertices nueva lista de vértices.
+     */
     public void setVertices(Lista vertices) {
         this.vertices = vertices;
     }
-    
+     /**
+     * Carga y procesa un archivo JSON con los datos de la red de transporte.
+     * @param rutaArchivo la ruta del archivo JSON a cargar.
+     */
     public void cargarArchivoJSON(String rutaArchivo) {
         try {
             Gson gson = new Gson();
             JsonObject redTransporteData = gson.fromJson(new FileReader(rutaArchivo), JsonObject.class);
             
-            
+             // Obtener las redes de transporte
             Lista nombresRedes = obtenerClavesDeJsonObject (redTransporteData);
             
-            
+            // Procesar cada red de transporte
             for (int i = 0; i< nombresRedes.getSize(); i++) {
                 String nombreRed = (String) nombresRedes.getValor(i);
                 JsonElement redElement = redTransporteData.get(nombreRed);
                 
-                
+                // Procesar red de transporte si es un objeto o un array
                 if (redElement.isJsonObject()) {
                     JsonObject lineasObject = redElement.getAsJsonObject();
                     procesarLineasRed (lineasObject);
@@ -62,7 +71,11 @@ public class Cargar {
             e.printStackTrace ();
         }
     }
-    
+    /**
+     * Obtiene las claves de un objeto JSON y las guarda en una lista.
+     * @param jsonObject el objeto JSON del cual obtener las claves.
+     * @return lista de claves obtenidas.
+     */
     private Lista obtenerClavesDeJsonObject (JsonObject jsonObject) {
         Lista listaClaves = new Lista();
         for (String key : jsonObject.keySet()) {
@@ -71,7 +84,10 @@ public class Cargar {
         return listaClaves;
     }
     
-    
+     /**
+     * Procesa las líneas de la red de transporte a partir de un objeto JSON.
+     * @param lineasObject el objeto JSON que contiene las líneas.
+     */
     private void procesarLineasRed (JsonObject lineasObject) {
         Lista nombresLineas = obtenerClavesDeJsonObject (lineasObject);
         
@@ -82,7 +98,7 @@ public class Cargar {
             Vertice verticeAnterior = null;
             Vertice verticeActual;
             
-            
+            // Procesar cada estación de la línea
             for (JsonElement estacionElement : estacionesArray) {
                 if (estacionElement.isJsonPrimitive()) {
                     
@@ -109,7 +125,13 @@ public class Cargar {
             }
         }
     }
-    
+     /**
+     * Crea una conexión peatonal entre dos estaciones.
+     * @param estacion1 nombre de la primera estación.
+     * @param estacion2 nombre de la segunda estación.
+     * @param estacionAnterior vértice anterior para conectar.
+     * @return el último vértice creado o encontrado.
+     */
     private Vertice crearPasoPeatonal (String estacion1, String estacion2, Vertice estacionAnterior) {
         Vertice v1 = obtenerOcrearVertice (estacion1);
         Vertice v2 = obtenerOcrearVertice (estacion2);
@@ -125,7 +147,11 @@ public class Cargar {
         estacionAnterior = v1;
         return estacionAnterior;
     }
-    
+     /**
+     * Busca un vértice por el nombre de la estación. Si no existe, lo crea.
+     * @param nombreEstacion el nombre de la estación a buscar o crear.
+     * @return el vértice correspondiente a la estación.
+     */
     private Vertice obtenerOcrearVertice (String nombreEstacion) {
         
         for (int i = 0; i < vertices.getSize(); i++) {

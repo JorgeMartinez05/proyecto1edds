@@ -17,12 +17,22 @@ public class DFS {
     
     private Grafo grafo;
     private int t;
-    
+    /**
+     * Constructor que inicializa el grafo y la distancia máxima para el recorrido DFS.
+     * 
+     * @param grafo el grafo que se va a recorrer.
+     * @param t la distancia máxima permitida para el recorrido DFS.
+     */
     public DFS (Grafo grafo,int t) {
         this.grafo = grafo;
         this.t = t;
     }
-    
+    /**
+     * Realiza un recorrido DFS (búsqueda en profundidad) comenzando desde un vértice específico.
+     * Muestra el recorrido en un cuadro de diálogo.
+     * 
+     * @param verticeInicial el vértice desde donde empieza el recorrido.
+     */
     public void busquedaDFS (Vertice verticeInicial) {
         if (verticeInicial == null) {
             JOptionPane.showMessageDialog(null, "El vértice inicial no puede ser nulo.");
@@ -38,7 +48,15 @@ public class DFS {
         resultado.append("Cobertura DFS completada.\n");
         JOptionPane.showMessageDialog(null, resultado.toString());
     }
-    
+    /**
+     * Método recursivo que realiza el recorrido DFS por los vértices adyacentes y los pasos peatonales,
+     * manteniendo un registro de las estaciones visitadas y las distancias.
+     * 
+     * @param vertice el vértice actual que se está recorriendo.
+     * @param visitados lista de los vértices ya visitados.
+     * @param distanciaActual la distancia recorrida desde el vértice inicial.
+     * @param resultado cadena acumulada con los resultados del recorrido.
+     */
     private void dfsRecursivo(Vertice vertice, Lista visitados, int distanciaActual, StringBuilder resultado) {
         visitados.insertarFinal(vertice);
         

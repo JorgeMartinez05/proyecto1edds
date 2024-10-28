@@ -15,7 +15,12 @@ import proyecto1edds.Estacion;
  * @author eabdf
  */
 public class Funcion {
-    
+     /**
+     * Retorna una lista de nombres de estaciones que no tienen sucursal en el grafo.
+     * 
+     * @param grafo el grafo que contiene las estaciones.
+     * @return lista de nombres de estaciones sin sucursal.
+     */
     public Lista estacionesSinSucursal(Grafo grafo) {
         Lista nombresEstaciones = new Lista();
         for (int i = 0; i < grafo.getEstaciones().getSize(); i++) {
@@ -28,7 +33,12 @@ public class Funcion {
         
         return nombresEstaciones;
     }
-    
+    /**
+     * Retorna una lista de nombres de estaciones que tienen sucursal en el grafo.
+     * 
+     * @param grafo el grafo que contiene las estaciones.
+     * @return lista de nombres de estaciones con sucursal.
+     */
     public Lista estacionesConSucursal (Grafo grafo) {
         Lista nombresEstaciones = new Lista();
         for (int i = 0; i < grafo.getEstaciones().getSize(); i++) {
@@ -40,6 +50,12 @@ public class Funcion {
         
         return nombresEstaciones;
     }
+     /**
+     * Retorna una lista de los nombres de todas las estaciones en el grafo.
+     * 
+     * @param grafo el grafo que contiene las estaciones.
+     * @return lista de nombres de estaciones.
+     */
     public Lista mostrarEstaciones(Grafo grafo) {
         Lista nombresEstaciones = new Lista();
         for (int i = 0; i < grafo.getEstaciones().getSize(); i++) {
@@ -50,7 +66,12 @@ public class Funcion {
 
         return nombresEstaciones;
     }
-    
+    /**
+     * Retorna una lista de los nombres de los vértices en una lista dada.
+     * 
+     * @param vertices la lista de vértices.
+     * @return lista de nombres de los vértices.
+     */
     public Lista mostrarListaVertice(Lista vertices){
         Lista nombreVertices = new Lista();
         for (int i = 0; i < vertices.getSize(); i++) {
@@ -60,7 +81,12 @@ public class Funcion {
         
         return nombreVertices;
     }
-    
+     /**
+     * Retorna una cadena de texto con los nombres de las estaciones en una línea.
+     * 
+     * @param linea la lista de estaciones en la línea.
+     * @return cadena con los nombres de las estaciones o un mensaje si está vacía.
+     */
     public String mostrarLinea (Lista linea) {
         if (linea.isEmpty()) {
             return "La linea no tiene estaciones";
@@ -74,7 +100,13 @@ public class Funcion {
             return lineaStr;
         }
     }
-    
+     /**
+     * Busca un vértice por el nombre de la estación. Si no existe, lo crea y lo añade a la lista de vértices.
+     * 
+     * @param nombreEstacion el nombre de la estación a buscar o crear.
+     * @param vertices la lista de vértices donde buscar.
+     * @return el vértice correspondiente a la estación.
+     */
     public Vertice obtenerOcrearVertice (String nombreEstacion, Lista vertices) {
         
         for (int i = 0; i < vertices.getSize(); i++) {
